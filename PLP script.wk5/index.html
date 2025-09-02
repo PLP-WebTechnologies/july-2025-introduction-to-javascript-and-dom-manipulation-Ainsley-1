@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <div class="container">
+        <h1>Personal Task Manager</h1>
+        
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-group">
+                <label for="taskInput">Task Description:</label>
+                <input type="text" id="taskInput" placeholder="Enter your task...">
+            </div>
+            <div class="input-group">
+                <label for="prioritySelect">Priority Level:</label>
+                <select id="prioritySelect">
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+            </div>
+            <button onclick="addTask()">Add Task</button>
+            <button onclick="clearAllTasks()">Clear All Tasks</button>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalTasks">0</div>
+                <div>Total Tasks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="completedTasks">0</div>
+                <div>Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="pendingTasks">0</div>
+                <div>Pending</div>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <button class="filter-btn active" onclick="filterTasks('all')">All Tasks</button>
+            <button class="filter-btn" onclick="filterTasks('pending')">Pending</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Completed</button>
+            <button class="filter-btn" onclick="filterTasks('high')">High Priority</button>
+        </div>
+
+        <!-- Task List -->
+        <div id="taskList" class="task-list">
+            <!-- Tasks will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
